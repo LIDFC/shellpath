@@ -1,0 +1,41 @@
+name: Предложить уровень
+description: Идея нового уровня или нового блока
+labels: [level]
+body:
+  - type: dropdown
+    id: block
+    attributes:
+      label: Блок
+      options:
+        - Начальный
+        - Сеть
+        - SSH
+        - Новый блок
+    validations:
+      required: true
+  - type: textarea
+    id: skill
+    attributes:
+      label: Чему учит уровень
+      description: Одна-две команды или идеи. Хороший уровень учит одной вещи.
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Задание для игрока
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Решение
+      description: Команды, которыми уровень проходится. Из них получится эталонное решение для тестов.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: prereq
+    attributes:
+      label: Что игрок должен уже знать
+      description: На каких уровнях это объяснено. Если нигде — нужен ещё уровень перед этим.

@@ -1,0 +1,17 @@
+{
+  "name": "shellpath",
+  "version": "1.0.0",
+  "description": "Учебная игра по командной строке Linux, сетям на ALT Linux и SSH с эмулятором терминала в браузере",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

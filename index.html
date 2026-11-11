@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>shellpath</title>
+  <meta name="description" content="Учебная игра по командной строке Linux, сетям на ALT Linux и SSH с эмулятором терминала в браузере">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body data-block="basic">
+  <div class="app">
+    <aside class="side">
+      <header class="brand">
+        <div class="brand-text">
+          <h1 class="wordmark">shellpath</h1>
+          <p class="tagline" id="tagline"></p>
+        </div>
+        <div class="progress">
+          <button type="button" class="text-btn" id="progressBtn" aria-expanded="false" aria-controls="progressPanel"></button>
+          <div class="popover" id="progressPanel" hidden>
+            <button type="button" class="text-btn" id="exportBtn"></button>
+            <p class="small" id="exportMsg" role="status"></p>
+            <textarea id="exportCode" rows="2" readonly hidden aria-label="Код прогресса"></textarea>
+            <label class="small" for="importCode" id="importLabel"></label>
+            <div class="row">
+              <input id="importCode" type="text" spellcheck="false" autocomplete="off">
+              <button type="button" class="btn" id="importBtn"></button>
+            </div>
+            <p class="small" id="importMsg" role="status"></p>
+            <button type="button" class="text-btn danger" id="resetBtn"></button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="blocks" role="tablist" id="tabs" aria-label="Блоки уровней"></nav>
+
+      <section class="panel" id="panel" aria-labelledby="panelLabel">
+        <h2 class="vh" id="panelLabel"></h2>
+        <div class="ports" id="ports"></div>
+      </section>
+
+      <article class="mission" id="mission" aria-live="polite"></article>
+
+      <form class="pass" id="passform" autocomplete="off">
+        <label for="passin" id="passlabel"></label>
+        <div class="row">
+          <input id="passin" type="text" spellcheck="false">
+          <button class="btn" type="submit" id="passBtn"></button>
+        </div>
+        <p class="small" id="passmsg" role="status"></p>
+      </form>
+      <p class="how small" id="how" hidden></p>
+    </aside>
+
+    <section class="term" id="term">
+      <div class="tbar">
+        <span class="link-led" id="linkLed" aria-hidden="true"></span>
+        <span class="ttitle" id="ttitle"></span>
+        <span class="tdepth" id="tdepth"></span>
+        <button type="button" class="tbtn" id="tclear"></button>
+      </div>
+      <div class="out" id="out">
+        <div id="log" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div class="inrow" id="inrow">
+          <span id="prompt"></span>
+          <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="touchkeys" id="touchkeys" aria-label="Клавиши терминала"></div>
+      <div class="editor" id="editor" hidden>
+        <div class="ebar"><span>GNU nano 7.2</span><span id="efile"></span><span id="emod"></span></div>
+        <textarea id="etext" spellcheck="false" autocapitalize="off" autocorrect="off"></textarea>
+        <div class="emsg" id="emsg" role="status"></div>
+        <div class="ekeys" id="ekeys"></div>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

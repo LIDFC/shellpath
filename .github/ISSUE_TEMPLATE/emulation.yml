@@ -1,0 +1,33 @@
+name: Команда ведёт себя не как в Linux
+description: Эмулятор выдаёт не то, что выдал бы настоящий ALT Linux
+labels: [emulation]
+body:
+  - type: textarea
+    id: command
+    attributes:
+      label: Команда
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: emulator
+    attributes:
+      label: Что показывает shellpath
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: real
+    attributes:
+      label: Что показывает настоящая система
+      description: Укажите дистрибутив и версию. Вывод с реальной машины очень помогает.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: limitations
+    attributes:
+      label: Проверка
+      options:
+        - label: Я посмотрел docs/LIMITATIONS.md — этого ограничения там нет
+          required: true

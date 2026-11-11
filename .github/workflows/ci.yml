@@ -1,0 +1,23 @@
+name: Проверка
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      # Зависимостей нет, npm install не нужен
+      - name: Тесты (включая эталонные решения всех уровней)
+        run: npm test
+      - name: Сборка в один файл
+        run: npm run build

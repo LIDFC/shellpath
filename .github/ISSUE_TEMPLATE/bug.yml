@@ -1,0 +1,30 @@
+name: Ошибка
+description: Что-то сломалось или работает не так, как описано
+labels: [bug]
+body:
+  - type: input
+    id: level
+    attributes:
+      label: Блок и уровень
+      placeholder: Например, «Сеть, уровень 7»
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Что вы вводили
+      description: Команды по порядку. Можно скопировать прямо из терминала.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидали и что получили
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Браузер и система
+      placeholder: Например, Firefox 132, ALT Workstation 10
